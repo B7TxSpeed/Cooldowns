@@ -886,19 +886,19 @@ end
 
 function Cool.Tracking.EnableSynergiesFromPrefs()
   for key, enable in pairs(Cool.character.synergy) do
-    if enable == true then Cool.Tracking.EnableTrackingForSet(key, true) end
+    if enable == true then Cool.Tracking.EnableTrackingForSet(key, true, nil) end
   end
 end
 
 function Cool.Tracking.EnablePassivesFromPrefs()
   for key, enable in pairs(Cool.character.passive) do
-    if enable == true then Cool.Tracking.EnableTrackingForSet(key, true) end
+    if enable == true then Cool.Tracking.EnableTrackingForSet(key, true, nil) end
   end
 end
 
 function Cool.Tracking.EnableCPFromPrefs()
   for key, enable in pairs(Cool.character.champion) do
-    if enable == true then Cool.Tracking.EnableTrackingForSet(key, true) end
+    if enable == true then Cool.Tracking.EnableTrackingForSet(key, true, nil) end
   end
   return false
 end
@@ -959,20 +959,24 @@ end
 function Cool.Tracking.EnableTrackingForCP(cps)
   for cpName, enabled in pairs(Cool.character["champion"]) do
     if cps[cpName] == nil then
-      Cool.Tracking.EnableTrackingForSet(cpName, false)
+      Cool.Tracking.EnableTrackingForSet(cpName, false, nil)
     else
       d(string.format("cpName: %s, enabled: %s", cpName, tostring(Cool.character["champion"][cpName])))
-      Cool.Tracking.EnableTrackingForSet(cpName, true)
+      Cool.Tracking.EnableTrackingForSet(cpName, true, nil)
     end
   end
 end
 
-function Cool.Tracking.EnableTrackingForSet(setKey, enabled)
+function Cool.Tracking.EnableTrackingForSet(setKey, enabled, setId)
 
   -- if enabled and not LEB:IsSetEquipped(setKey) then
   --   if setKey == Cool.spaulderName then Cool.preferences.spaulderActive = false end
   --   return
   -- end
+
+  if setId ~= nil then
+    setKey = LibSets.GetSetName(setId, "en")
+  end
 
   setKey = RenameWhenPerfectSet(setKey);
   local set = Cool.Data.Sets[setKey]

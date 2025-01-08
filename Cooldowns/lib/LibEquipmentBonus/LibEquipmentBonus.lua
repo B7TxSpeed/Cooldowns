@@ -95,7 +95,7 @@ local function Trace(addon, debugLevel, ...)
 end
 
 local function AddSetBonus(slot, itemLink)
-    local hasSet, setName, _, _, maxEquipped, total = GetItemLinkSetInfo(itemLink, true)
+    local hasSet, setName, _, _, maxEquipped, setId = GetItemLinkSetInfo(itemLink, true)
 
     local name = RenameWhenPerfectSet(setName)
 
@@ -109,6 +109,7 @@ local function AddSetBonus(slot, itemLink)
             leb.sets[name].maxBonus    = maxEquipped
             leb.sets[name].equippedMax = false
             leb.sets[name].bonuses     = {}
+            leb.sets[name].setId       = setId
         end
 
         -- Update bonuses
@@ -156,7 +157,7 @@ local function UpdateEnabledSets(forceNotify)
                     if (addons[i].filterBySetName == nil or addons[i].filterBySetName == key) then
                         if (forceNotify ~= nil and forceNotify == addons[i].addonId) or forceNotify == nil then
                             Trace(addons[i], 1, "Notifying set update for: <<1>> (Enabled: <<2>>)", key, tostring(leb.sets[key].equippedMax))
-                            addons[i].EquipmentUpdateCallback(key, leb.sets[key].equippedMax)
+                            addons[i].EquipmentUpdateCallback(key, leb.sets[key].equippedMax, leb.sets[key].setId)
                         else
                             Trace(addons[i], 2, "Force notify not matched, not notifying for: <<1>> (Enabled: <<2>>)", key, tostring(leb.sets[key].equippedMax))
                         end
@@ -212,6 +213,13 @@ local function UpdateArmorySlots(e,resultId) -- thanks to @CyberOnESO
     end
 end
 
+
+-- TODO: handle CP translation in a better way
+local CPNamesFromIds = {
+    [51] = "Expert Evasion",
+    [52] = "Slippery",
+}
+
 -- Handle CP changes
 local function UpdateCPSlottables(_, championPurchaseResult)
     if championPurchaseResult == CHAMPION_PURCHASE_SUCCESS then
@@ -219,6 +227,9 @@ local function UpdateCPSlottables(_, championPurchaseResult)
         for i = 1, 12 do
             local cpId = GetSlotBoundId(i, HOTBAR_CATEGORY_CHAMPION)
             local cpName = GetChampionSkillName(cpId)
+            if CPNamesFromIds[cpId] ~= nil then
+                cpName = CPNamesFromIds[cpId]
+            end
             equippedCp[cpName] = {}
             equippedCp[cpName].id = cpId
         end

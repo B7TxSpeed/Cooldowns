@@ -112,7 +112,8 @@ function Cool.Initialize(event, addonName)
   Cool.Tracking.RegisterEvents()
   Cool.Tracking.EnableSynergiesFromPrefs()
   Cool.Tracking.EnablePassivesFromPrefs()
-  Cool.Tracking.EnableCPFromPrefs()
+  -- Disable CP at startup for now
+  -- Cool.Tracking.EnableCPFromPrefs()
 
   -- Configure and register LibEquipmentBonus
   local LEB                   = LibEquipmentBonus
