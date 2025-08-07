@@ -857,11 +857,8 @@ function Cool.Settings.Init()
       table.insert(settingsBreakout.champion.data, key)
       table.insert(settingsBreakout.champion.description, set.description)
     elseif set.procType == "passive" then
-      -- Only show options for current player class
-      if GetUnitClassId("player") == set.classId then
-        table.insert(settingsBreakout.passive.data, key)
-        table.insert(settingsBreakout.passive.description, set.description)
-      end
+      table.insert(settingsBreakout.passive.data, key)
+      table.insert(settingsBreakout.passive.description, set.description)
     else
       Cool:Trace(1, "Invalid procType: <<1>>", set.procType)
     end

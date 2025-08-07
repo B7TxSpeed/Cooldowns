@@ -255,7 +255,7 @@ Cool.Data.Sets = {
   ["Spaulder of Ruin"] = {
     procType = "artifact",
     event = EVENT_COMBAT_EVENT,
-    description = "Shows if effect is active or not",
+    description = "Remember to squat",
     id = {163359, 163401, 163404}, -- 163357
     enabled = false,
     -- result = ACTION_RESULT_EFFECT_GAINED,
@@ -413,7 +413,7 @@ Cool.Data.Sets = {
   ["Mechanical Acuity"] = {
     procType = "stackSet",
     event = EVENT_EFFECT_CHANGED, --EVENT_COMBAT_EVENT,
-    description = "ravage pot goes brrr",
+    description = "oblivion soul magic goes brrr",
     id = 99204, -- cooldown trigger = 164087
     enabled = false,
     cooldownTrigger = { event = EVENT_COMBAT_EVENT, id = 164087, result = ACTION_RESULT_EFFECT_GAINED_DURATION },
@@ -825,7 +825,7 @@ Cool.Data.Sets = {
     procType = "set",
     event = EVENT_COMBAT_EVENT,
     description = "they killed my boy",
-    id = 116954,
+    id = 93109,
     enabled = false,
     result = ACTION_RESULT_EFFECT_GAINED,
     cooldownDurationMs = 16000,
@@ -1116,21 +1116,6 @@ Cool.Data.Sets = {
     durationms = 12000,
     stacks = nil,
   },
-  ["Draugrkin's Grip"] = {
-    procType = "set",
-    event = EVENT_COMBAT_EVENT,
-    description = "Tracks the effect of Draugrkin's Grip.",
-    id = 133406,
-    enabled = false,
-    result = ACTION_RESULT_EFFECT_GAINED,
-    cooldownDurationMs = 9000,
-    onCooldown = false,
-    timeOfProc = 0,
-    texture = "/Cooldowns/icons/draugrkins_grip.dds",
-    showFrame = true,
-    durationms = 5000,
-    stacks = nil,
-  },
   ["Essence Thief"] = {
     procType = "set",
     event = EVENT_COMBAT_EVENT,
@@ -1161,6 +1146,21 @@ Cool.Data.Sets = {
     durationms = 0,
     stacks = nil,
   },
+  ["Fledgling's Nest"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "Bird is the word",
+    id = 236355,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 0,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/scribing_gryphonquest.dds",
+    showFrame = true,
+    durationms = 10000,
+    stacks = nil,
+  },
   ["Glacial Guardian"] = {
     procType = "set",
     event = EVENT_COMBAT_EVENT,
@@ -1189,6 +1189,36 @@ Cool.Data.Sets = {
     texture = "/esoui/art/icons/achievement_trial_cr_flavor_3.dds",
     showFrame = true,
     durationms = 0,
+    stacks = nil,
+  },
+  ["Hand of Mephala"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "cobwebs",
+    id = 84357,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 5000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/ability_undaunted_003.dds",
+    showFrame = true,
+    durationms = 0,
+    stacks = nil,
+  },
+  ["Heroic Unity"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "Drake's Rush but with synergies",
+    id = 236882,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 1000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/ability_buff_major_heroism.dds",
+    showFrame = true,
+    durationms = 6000,
     stacks = nil,
   },
   ["Hollowfang Thirst"] = {
@@ -1236,6 +1266,36 @@ Cool.Data.Sets = {
     durationms = 10000,
     stacks = nil,
   },
+  ["Jerensi's Bladestorm"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "The new trash king",
+    id = 235746,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 15000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/u45_ability_dun1_ironteeth.dds",
+    showFrame = true,
+    durationms = 5000,
+    stacks = nil,
+  },
+  ["Lucilla's Windshield"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "I guess it looks cool idk",
+    id = 235885,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 0,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/ability_warrior_017.dds",
+    showFrame = true,
+    durationms = 10000,
+    stacks = nil,
+  },
   ["Magicka Furnace"] = {
     procType = "set",
     event = EVENT_COMBAT_EVENT,
@@ -1248,6 +1308,36 @@ Cool.Data.Sets = {
     timeOfProc = 0,
     texture = "/esoui/art/champion/champion_points_magicka_icon-hud.dds",
     showFrame = false,
+    durationms = 0,
+    stacks = nil,
+  },
+  ["Noble Duelist's Silks"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "For your HA dungeon sorcery",
+    id = 34373,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 0,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/ability_rogue_019.dds",
+    showFrame = true,
+    durationms = 15000,
+    stacks = nil,
+  },
+  ["Noxious Boulder"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "Keep rollin' rollin' rollin' rollin' yeah",
+    id = 236745,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 20000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/death_recap_poison_aoe.dds",
+    showFrame = true,
     durationms = 0,
     stacks = nil,
   },
@@ -1388,6 +1478,21 @@ Cool.Data.Sets = {
     texture = "/esoui/art/icons/ability_mage_037.dds",
     showFrame = true,
     durationms = 10000,
+    stacks = nil,
+  },
+  ["Vandorallen's Resonance"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "Storm pillars from heavy attacks",
+    id = 235835,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 6000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/death_recap_shock_dot_heavy.dds",
+    showFrame = true,
+    durationms = 0,
     stacks = nil,
   },
   ["Vestments of the Warlock"] = {
@@ -1606,21 +1711,6 @@ Cool.Data.Sets = {
     durationms = 0,
     stacks = nil,
   },
-  ["Wyrd Tree's Blessing"] = {
-    procType = "set",
-    event = EVENT_ABILITY_COOLDOWN_UPDATED,
-    description = "Displays when the Wyrd Tree proc is available or cooldown until it is ready again.",
-    id = 34871,
-    enabled = false,
-    result = ACTION_RESULT_EFFECT_GAINED,
-    cooldownDurationMs = 15000,
-    onCooldown = false,
-    timeOfProc = 0,
-    texture = "/esoui/art/icons/ability_ava_005.dds",
-    showFrame = true,
-    durationms = 0,
-    stacks = nil,
-  },
 
   -- Cyrodiil
   ["Crest of Cyrodiil"] = {
@@ -1714,6 +1804,21 @@ Cool.Data.Sets = {
     durationms = 0,
     stacks = nil,
   },
+  ["Snake in the Stars"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "Healing meta too stronk",
+    id = 188546,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 12000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/death_recap_poison_dot_base.dds",
+    showFrame = true,
+    durationms = 4000,
+    stacks = nil,
+  },
   ["Steadfast Hero"] = {
     procType = "set",
     event = EVENT_COMBAT_EVENT,
@@ -1742,6 +1847,21 @@ Cool.Data.Sets = {
     texture = "/esoui/art/icons/placeholder/icon_offensive_shieldsword_01.dds",
     showFrame = true,
     durationms = 15000,
+    stacks = nil,
+  },
+  ["Unleashed Terror"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "bleed them dry",
+    id = 141204,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 10000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/death_recap_bleed.dds",
+    showFrame = true,
+    durationms = 10000,
     stacks = nil,
   },
   ["Warrior's Fury"] = {
@@ -1808,6 +1928,21 @@ Cool.Data.Sets = {
     texture = "/esoui/art/icons/gear_undaunted_werewolfbehemoth_head_a.dds",
     showFrame = false,
     durationms = 12000,
+    stacks = nil,
+  },
+  ["Baron Thirsk"] = {
+    procType = "monsterSet",
+    event = EVENT_COMBAT_EVENT,
+    description = "Weak ass scamps.",
+    id = 167739,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 25000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/gear_undgrievoustwilightv2_head_a.dds",
+    showFrame = false,
+    durationms = 6000,
     stacks = nil,
   },
   ["Baron Zaudrus"] = {
@@ -2234,6 +2369,20 @@ Cool.Data.Sets = {
     showFrame = false,
     durationms = 6000,
   },
+  ["Orpheon the Tactician"] = {
+    procType = "monsterSet",
+    event = EVENT_COMBAT_EVENT,
+    description = "Urotsukidouji goes whooping",
+    id = 236654,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 8000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/death_recap_arcanist_tentacle.dds",
+    showFrame = true,
+    durationms = 2000,
+  },
   ["Pirate Skeleton"] = {
     procType = "monsterSet",
     event = EVENT_COMBAT_EVENT,
@@ -2271,6 +2420,24 @@ Cool.Data.Sets = {
     showFrame = true,
     durationms = 7000,
     stacks = nil,
+  },
+  ["Roksa the Warped"] = {
+    procType = "monsterSet",
+    event = EVENT_EFFECT_CHANGED,
+    description = "lots of resources",
+    id = 188146,
+    enabled = false,
+    cooldownTrigger = nil,
+    cooldownDurationMs = 0,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/achievement_u37_dun1_killmonstersa.dds",
+    showFrame = true,
+    durationms = 0,
+    stacks = 0,
+    endTime = 0,
+    cdStart = 0,
+    cdEnd   = 0,
   },
   ["Scourge Harvester"] = {
     procType = "monsterSet",
@@ -2632,6 +2799,21 @@ Cool.Data.Sets = {
     durationms = 2000,
     stacks = nil,
   },
+  ["Winterborn"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "Icicles tickle",
+    id = 71647,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 6000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/death_recap_cold_ranged.dds",
+    showFrame = true,
+    durationms = 2000,
+    stacks = nil,
+  },
   ["Wrath of Elements"] = {
     procType = "monsterSet",
     event = EVENT_COMBAT_EVENT,
@@ -2980,20 +3162,9 @@ Cool.Data.Sets = {
     stacks = nil,
   },
 
-
-  -- Passives 
-  -- UnitClassId
-  -- 1: Dragonknight
-  -- 2: Sorcerer
-  -- 3: Nightblade
-  -- 4: Warden
-  -- 5: Necromancer
-  -- 6: Templar
-  -- 117: Arcanist
-
+  -- Skill Line Passives
   ["Mountain's Blessing"] = {
     procType = "passive",
-    classId = 1, --Dragonknight
     event = EVENT_COMBAT_EVENT,
     description = "Displays the cooldown for gaining ultimate by using an Eathern Heart ability while in combat. Does not reflect the Minor Brutality portion of this passive.",
     id = 45005,
@@ -3009,7 +3180,6 @@ Cool.Data.Sets = {
   },
   ["Seething Fury"] = {
     procType = "passive",
-    classId = 1, --Dragonknight
     event = EVENT_COMBAT_EVENT,
     description = "whip stacks goes brrr",
     id = 122658, 
@@ -3029,7 +3199,6 @@ Cool.Data.Sets = {
   },
   ["Exploitation"] = {
     procType = "passive",
-    classId = 2, --Sorcerer
     event = EVENT_COMBAT_EVENT,
     description = "Displays the duration on Minor Prophecy.",
     id = 62320,
@@ -3045,7 +3214,6 @@ Cool.Data.Sets = {
   },
   ["Transfer"] = {
     procType = "passive",
-    classId = 3, --Nightblade
     event = EVENT_COMBAT_EVENT,
     description = "Displays the cooldown for gaining ultimate upon activating a Siphoning ability.",
     id = 45146,
@@ -3061,7 +3229,6 @@ Cool.Data.Sets = {
   },
   ["Hemorrhage"] = {
     procType = "passive",
-    classId = 3, --Nightblade
     event = EVENT_COMBAT_EVENT,
     description = "Displays the duration on Minor Savagery.",
     id = 61666,
@@ -3077,7 +3244,6 @@ Cool.Data.Sets = {
   },
   ["Savage Beast"] = {
     procType = "passive",
-    classId = 4, --Warden
     event = EVENT_COMBAT_EVENT,
     description = "Displays the cooldown for gaining ultimate upon activating an Animal Companion ability.",
     id = 88513,
@@ -3109,7 +3275,6 @@ Cool.Data.Sets = {
   --},
   ["Corpse Consumption"] = {
     procType = "passive",
-    classId = 5, --Necromancer
     event = EVENT_COMBAT_EVENT,
     description = "Displays the cooldown for gaining ultimate when using an ability on a corpse.",
     id = 120612,
@@ -3125,7 +3290,6 @@ Cool.Data.Sets = {
   },
   ["Prism"] = {
     procType = "passive",
-    classId = 6, --Templar
     event = EVENT_COMBAT_EVENT,
     description = "Displays the cooldown for gaining ultimate when using a Dawn's Wrath ability.",
     id = 45217,
@@ -3141,7 +3305,6 @@ Cool.Data.Sets = {
   },
   ["Illuminate"] = {
     procType = "passive",
-    classId = 6, --Templar
     event = EVENT_COMBAT_EVENT,
     description = "Displays the duration on Minor Sorcery.",
     id = 61685,
@@ -3157,7 +3320,6 @@ Cool.Data.Sets = {
   },
   ["Circumvented Fate"] = {
     procType = "passive",
-    classId = 117, --Arcanist
     event = EVENT_COMBAT_EVENT,
     description = "Displays the duration on Minor Evasion.",
     id = 61715,
@@ -3173,7 +3335,6 @@ Cool.Data.Sets = {
   },
   ["Implacable Outcome"] = {
     procType = "passive",
-    classId = 117, --Arcanist
     event = EVENT_COMBAT_EVENT,
     description = "arcanist ult gen",
     id = 185070,
@@ -3189,7 +3350,6 @@ Cool.Data.Sets = {
   },
   ["Fated Fortune"] = {
     procType = "passive",
-    classId = 117, --Arcanist
     event = EVENT_COMBAT_EVENT,
     description = "arcanist ult gen",
     id = 194875,
