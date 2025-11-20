@@ -1523,7 +1523,10 @@ Cool.Data.Sets = {
     texture = "/esoui/art/icons/ability_healer_006.dds",
     showFrame = true,
     durationms = 20000,
-    stacks = nil,
+    stacks = 0,
+    endTime = 0,
+    cdStart = 0,
+    cdEnd   = 0,
   },
 
   -- Overland

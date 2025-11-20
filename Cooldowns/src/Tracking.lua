@@ -29,6 +29,7 @@ Cool.ghostTime          = 0
 local SUL_XAN_NAME      = "Sul-Xan's Torment"
 local SUL_XAN_ID        = 154737 --154737 buff --157738 soul
 local GHOST_ID          = 157738 --154737 buff --157738 soul
+local ZEN_ID            = 126597
 local EM                = EVENT_MANAGER
 local updateIntervalMs  = 100
 local time              = GetGameTimeMilliseconds
@@ -840,6 +841,33 @@ function Cool.Tracking.HideTrackerWhenInactive(setKey)
   end
 end
 
+local function CountPlayerDOTsOnTarget(targetUnitTag)
+    local dotCount = 0
+    for i = 1, GetNumBuffs(targetUnitTag) do
+        local _, _, _, _, _, _, _, _, abilityType, _, abilityId, _, castByPlayer = GetUnitBuffInfo(targetUnitTag, i)
+        if castByPlayer and abilityType == ABILITY_TYPE_DAMAGE then
+            dotCount = dotCount + 1
+        end
+    end
+    return dotCount
+end
+
+function Cool.Tracking.TrackZenDOTs(setKey)
+  local set = Cool.Data.Sets[setKey]
+
+  if set.id == ZEN_ID then
+    local dots = CountPlayerDOTsOnTarget("reticleover")
+    local c = WM:GetControlByName(setKey .. "_Container")
+    
+    -- Update stacks with number of Zen DOTs
+    set.stacks = dots
+    
+    if c.stacks then
+      if set.stacks > 0 then c.stacks:SetText(set.stacks) else c.stacks:SetText("") end
+    end
+  end
+end
+
 -- ----------------------------------------------------------------------------
 -- Utility Functions
 -- ----------------------------------------------------------------------------
@@ -1090,6 +1118,8 @@ function Cool.Tracking.EnableTrackingForSet(setKey, enabled, setId)
         Cool.resTrackerOn = true
       elseif set.id == 154737 then -- sul-xan
         TrackSoulSpawn(true, setKey)
+      elseif set.id == ZEN_ID then
+        EM:RegisterForUpdate(Cool.name .. "_" .. "TrackZenDOTs", 500, function() Cool.Tracking.TrackZenDOTs(setKey) end)
       end
 
       set.enabled = true
@@ -1130,6 +1160,8 @@ function Cool.Tracking.EnableTrackingForSet(setKey, enabled, setId)
 
       if set.id == 154737 then -- sul-xan
         TrackSoulSpawn(false, setKey)
+      elseif set.id == ZEN_ID then
+        EM:UnregisterForUpdate(Cool.name .. "_" .. "TrackZenDOTs")
       end
 
       if type(set.id) == 'table' then
