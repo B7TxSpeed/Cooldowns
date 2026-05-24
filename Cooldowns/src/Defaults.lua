@@ -16,6 +16,7 @@ local defaults 	= {
   gridSize 					= 16,
   showOutsideCombat = true,
   lagCompensation 	= true,
+  stacksWithinIcon   = false,
   timerX 						= 0,
   timerY 						= 0,
   size 							= 64,

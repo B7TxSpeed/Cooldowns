@@ -105,6 +105,15 @@ local function SetLagCompensation(value)
   Cool.preferences.lagCompensation = value
 end
 
+-- Stacks within Icon
+local function GetStacksWithinIcon()
+  return Cool.preferences.stacksWithinIcon
+end
+
+local function SetStacksWithinIcon(value)
+  Cool.preferences.stacksWithinIcon = value
+end
+
 -- Selection
 local default = {
   artifact    = "-- Select an Artifact --",
@@ -907,6 +916,13 @@ function Cool.Settings.Init()
           decimals = 0,
           width = "full",
           disabled = function() return not GetSnapToGrid() end,
+      },
+      {		type = "checkbox", name  = "Stacks within Icon",
+          tooltip = "Set to ON to display stacks within set icon.",
+          getFunc = function() return GetStacksWithinIcon() end,
+          setFunc = function(value) SetStacksWithinIcon(value) end,
+          width = "full",
+          requiresReload = true,
       },
       {		type = "divider",  width = "full",
           height = 16,

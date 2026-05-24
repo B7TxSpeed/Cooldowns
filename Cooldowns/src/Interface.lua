@@ -169,6 +169,7 @@ function Cool.UI.Draw(key)
   if set.noUI then return end
 
   local container = WM:GetControlByName(key .. "_Container")
+  local stacksWithinIcon = Cool.preferences.stacksWithinIcon
 
   -- Enable display
   if set.enabled then
@@ -220,14 +221,22 @@ function Cool.UI.Draw(key)
       end
 
       local font = ZoFontWinH1:GetFontInfo()
+      if stacksWithinIcon then
+        font = "$(MEDIUM_FONT)"
+      end
 
       if set.stacks ~= nil then
 
         local s = WM:CreateControl(key .. "_Stacks", c, CT_LABEL)
         s:SetAlpha(1)
         s:SetDrawLevel(5)
-        s:SetAnchor(BOTTOM, c, TOP, 0, 0)
-        s:SetFont(font .. "|45|thick-outline")
+        if stacksWithinIcon then
+          s:SetAnchor(BOTTOM, c, TOP, 1, 46)
+          s:SetFont(font .. "|40|outline")
+        else
+          s:SetAnchor(BOTTOM, c, TOP, 0, 0)
+          s:SetFont(font .. "|45|thick-outline")
+        end
 
         s:SetColor(unpack(saved.stack.color))
 
@@ -238,11 +247,19 @@ function Cool.UI.Draw(key)
       local x, y  = Cool.UI.GetSavedTimerPosition(key)
       l:SetAlpha(1)
       l:SetDrawLevel(5)
-      l:SetAnchor(CENTER, c, 	CENTER, x, Cool.UI.FormatTimerY(y))
+      if stacksWithinIcon then
+        l:SetAnchor(CENTER, c, 	CENTER, x + 1, (Cool.UI.FormatTimerY(y) + 16))
+      else
+        l:SetAnchor(CENTER, c, 	CENTER, x, Cool.UI.FormatTimerY(y))
+      end
 
       if set.id == 147462 or set.id == 193411 then -- pearls and esoteric
         l:SetColor(unpack(saved.colorDown))
-        l:SetFont(font .. "|$(KB_40)|thick-outline")
+        if stacksWithinIcon then
+          l:SetFont(font .. "|$(KB_40)|outline")
+        else
+          l:SetFont(font .. "|$(KB_40)|thick-outline")
+        end
 
         if saved.colorFrame then c.frame:SetColor(unpack(saved.colorDown)) end
 
