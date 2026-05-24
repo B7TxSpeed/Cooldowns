@@ -1108,9 +1108,15 @@ function Cool.Tracking.EnableTrackingForSet(setKey, enabled, setId)
         end
       else
         EM:RegisterForEvent(  Cool.name .. "_" .. set.id, set.event, function(...) procFunction(setKey, ...) end)
-        EM:AddFilterForEvent( Cool.name .. "_" .. set.id, set.event,
-        REGISTER_FILTER_ABILITY_ID, set.id,
-        REGISTER_FILTER_SOURCE_COMBAT_UNIT_TYPE, COMBAT_UNIT_TYPE_PLAYER)
+        if set.targetTracking ~= nil and set.targetTracking == true then
+          EM:AddFilterForEvent( Cool.name .. "_" .. set.id, set.event,
+          REGISTER_FILTER_ABILITY_ID, set.id,
+          REGISTER_FILTER_TARGET_COMBAT_UNIT_TYPE, COMBAT_UNIT_TYPE_PLAYER)
+        else
+          EM:AddFilterForEvent( Cool.name .. "_" .. set.id, set.event,
+          REGISTER_FILTER_ABILITY_ID, set.id,
+          REGISTER_FILTER_SOURCE_COMBAT_UNIT_TYPE, COMBAT_UNIT_TYPE_PLAYER)
+        end
       end
 
       if set.id == 147462 or set.id == 193411 then -- pearls and esoteric
