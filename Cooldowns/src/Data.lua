@@ -298,6 +298,7 @@ Cool.Data.Sets = {
     endTime = 0,
     cdStart = 0,
     cdEnd   = 0,
+    hideTimer = true,
   },
 
   -- Resource trackers

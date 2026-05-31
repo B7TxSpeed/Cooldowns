@@ -230,7 +230,10 @@ function Cool.UI.Draw(key)
         local s = WM:CreateControl(key .. "_Stacks", c, CT_LABEL)
         s:SetAlpha(1)
         s:SetDrawLevel(5)
-        if stacksWithinIcon then
+        if set.hideTimer then
+          s:SetAnchor(CENTER, c, CENTER, 0, 0)
+          s:SetFont(font .. "|45|thick-outline")
+        elseif stacksWithinIcon then
           s:SetAnchor(BOTTOM, c, TOP, 1, 46)
           s:SetFont(font .. "|40|outline")
         else
@@ -251,6 +254,9 @@ function Cool.UI.Draw(key)
         l:SetAnchor(CENTER, c, 	CENTER, x + 1, (Cool.UI.FormatTimerY(y) + 16))
       else
         l:SetAnchor(CENTER, c, 	CENTER, x, Cool.UI.FormatTimerY(y))
+      end
+      if set.hideTimer then
+        l:SetHidden(true)
       end
 
       if set.id == 147462 or set.id == 193411 then -- pearls and esoteric
