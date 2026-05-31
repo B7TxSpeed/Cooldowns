@@ -1,6 +1,6 @@
 -- -----------------------------------------------------------------------------
 -- Cooldowns
--- Author:  @g4rr3t[NA], @nogetrandom[EU], @kabs12[NA]
+-- Author:  @g4rr3t[NA], @nogetrandom[EU], @B7TxSpeed[EU]
 -- Created: Oct 12, 2018
 --
 -- Data.lua

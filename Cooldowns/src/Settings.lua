@@ -1,6 +1,6 @@
 -- -----------------------------------------------------------------------------
 -- Cooldowns
--- Author:  @g4rr3t[NA], @nogetrandom[EU], @kabs12[NA]
+-- Author:  @g4rr3t[NA], @nogetrandom[EU], @B7TxSpeed[EU]
 -- Created: May 5, 2018
 --
 -- Settings.lua
@@ -18,7 +18,7 @@ local panelData       = {
   type                  = "panel",
   name                  = "Cooldowns",
   displayName           = "Cooldowns",
-  author                = "|cFFCCCCg4rr3t|r [NA], nogetrandom [EU], |cFF009Bkabs12|r [NA]",
+  author                = "|cFFCCCCg4rr3t|r [NA], nogetrandom [EU], |c00fffe@B7TxSpeed|r [EU]",
   version               = Cool.version,
   registerForRefresh    = true,
 }

@@ -1,6 +1,6 @@
 -- -----------------------------------------------------------------------------
 -- Cooldowns
--- Author:  @g4rr3t[NA], @nogetrandom[EU], @kabs12[NA]
+-- Author:  @g4rr3t[NA], @nogetrandom[EU], @B7TxSpeed[EU]
 -- Created: Oct 6, 2018
 --
 -- Sounds.lua

@@ -1,6 +1,6 @@
 -- -----------------------------------------------------------------------------
 -- Cooldowns
--- Author:  @g4rr3t[NA], @nogetrandom[EU], @kabs12[NA]
+-- Author:  @g4rr3t[NA], @nogetrandom[EU], @B7TxSpeed[EU]
 -- Created: May 5, 2018
 --
 -- Track cooldowns for various sets
@@ -9,7 +9,7 @@
 -- -----------------------------------------------------------------------------
 Cool                  = {}
 Cool.name             = "Cooldowns"
-Cool.version          = "2.3"
+Cool.version          = "2.4"
 Cool.dbVersion        = 1
 Cool.slash            = "/cool"
 Cool.prefix           = "[Cooldowns] "
