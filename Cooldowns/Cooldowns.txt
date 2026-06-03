@@ -5,7 +5,7 @@
 ## Version: 2.4
 ## AddOnVersion: 204
 ## Author: |cFFCCCCg4rr3t|r, nogetrandom, |c00fffe@B7TxSpeed|r
-## Contributors: |cFF009Bkabs12|r, Aebinn, |c66CCFFCharles|r
+## Contributors: |cFF009Bkabs12|r, Aebinn, Lulu_Laventus, |c66CCFFCharles|r
 ## DependsOn: LibAddonMenu-2.0>=43 LibSets>=0009020
 
 lib/LibEquipmentBonus/LibEquipmentBonus.lua
