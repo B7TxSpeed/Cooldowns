@@ -1987,6 +1987,27 @@ Cool.Data.Sets = {
     stacks = nil,
   },
 
+  -- Infinite Archive
+  ["Aetheric Lancer"] = {
+    procType = "stackSet",
+    event = EVENT_EFFECT_CHANGED,
+    description = "Displays the duration and number of stacks.",
+    id = 224089,
+    enabled = false,
+    cooldownTrigger = nil,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 3000,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/u42_dun1_death_challenge.dds",
+    showFrame = true,
+    durationms = 5000,
+    stacks = 0,
+    endTime = 0,
+    cdStart = 0,
+    cdEnd   = 0,
+  },
+
   -- Monster Sets
   ["Archdruid Devyric"] = {
     procType = "monsterSet",
