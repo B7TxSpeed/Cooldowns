@@ -10,7 +10,7 @@ Available on ESOUI/Minion as [Cooldowns Global](https://www.esoui.com/downloads/
 - Kazpian and Gorethief trackers by Zorax
 - Aetheric Lancer tracker
 - Update Coral and Bahsei values
-- Add border aroung set icon with frame by Charles
+- Add border around set icon with frame by Charles
 
 2.4:
 - Global support
