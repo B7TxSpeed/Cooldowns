@@ -322,7 +322,7 @@ Cool.Data.Sets = {
     id = 154691,
     enabled = false,
     currentValue = 100,
-    scaling = {start = 100, scalar = 20, max = 50},
+    scaling = {start = 100, scalar = 30, max = 50},
     texture = "/esoui/art/icons/achievement_u30_vtrial_b2_hardmode.dds",
     showFrame = true,
   },
@@ -593,7 +593,7 @@ Cool.Data.Sets = {
     timeOfProc = 0,
     texture = "/esoui/art/icons/ability_warrior_028.dds",
     showFrame = true,
-    durationms = 10000,
+    durationms = 30000,
     stacks = nil,
   },
   ["Arms of Relequen"] = {
