@@ -6,6 +6,9 @@ Available on ESOUI/Minion as [Cooldowns Global](https://www.esoui.com/downloads/
 
 ## Changelog
 
+2.5.1:
+- Fix Bahsei bonus and Ansuul timer after U50.
+
 2.5:
 - Kazpian and Gorethief trackers by Zorax
 - Aetheric Lancer tracker
