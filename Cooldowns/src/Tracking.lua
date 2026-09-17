@@ -108,6 +108,12 @@ local function OnCombatEvent(setKey, _, result, _, abilityName, _, _, _, _, _, _
 
     Cool:Trace(1, "(+)Name: <<1>> ID: <<2>> with result <<3>>", abilityName, abilityId, result)
 
+    -- Display the proc count in place of the stacks
+    if set.replaceStacksByProcs then
+      set.procs = (set.procs or 0) + 1
+      Cool.UI.UpdateProcsCounter(setKey)
+    end
+
     if set.cooldownDurationMs ~= 0 then set.onCooldown = true end
 
     set.timeOfProc = GetGameTimeMilliseconds()
@@ -1016,6 +1022,7 @@ function Cool.Tracking.EnableTrackingForSet(setKey, enabled, setId)
   if enabled then
 
     if set.endTime == nil then set.endTime = 0 end
+    if set.replaceStacksByProcs then set.procs = 0 end
 
     -- Check manual disable first
     if Cool.character[set.procType][setKey] ~= nil and Cool.character[set.procType][setKey] == false then

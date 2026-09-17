@@ -82,6 +82,21 @@ function Cool.UI.FormatTimerY(y)
   return value
 end
 
+-- Displays the proc count in the stacks label for sets using replaceStacksByProcs
+function Cool.UI.UpdateProcsCounter(setKey)
+  local set = Cool.Data.Sets[setKey]
+  local c   = Cool.Controls[setKey]
+
+  if set == nil or c == nil or c.stacks == nil then return end
+
+  local n = set.procs or 0
+  if n > 0 then
+    c.stacks:SetText(n)
+  else
+    c.stacks:SetText("")
+  end
+end
+
 function Cool.UI.GetSavedScaleForControl(key)
   local set   = Cool.Data.Sets[key]
   local saved = Cool.preferences.sets[key]
@@ -375,8 +390,11 @@ function Cool.UI.Draw(key)
       end
     end
 
-    if set.stacks ~= nil then Cool.Tracking.UpdateSetBuffInfo(key) end
-
+    if set.replaceStacksByProcs then
+      Cool.UI.UpdateProcsCounter(key)
+    elseif set.stacks ~= nil then
+      Cool.Tracking.UpdateSetBuffInfo(key)
+    end
 
     -- Disable display
   else
@@ -412,6 +430,15 @@ function Cool.UI:ResetProcs()
 						Cool.Controls[k].counter:SetText("")
 						Cool.UI.UpdateProcs(k)
 				end
+		end
+
+    -- Sets displaying their proc count in place of the stacks
+	  for key, set in pairs(Cool.Data.Sets) do
+			if set.replaceStacksByProcs then
+        Cool:Trace(2, "[<<1>>]: procs = 0. was <<2>>", key, set.procs or 0)
+				set.procs = 0
+				Cool.UI.UpdateProcsCounter(key)
+			end
 		end
 end
 

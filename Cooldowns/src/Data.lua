@@ -100,6 +100,17 @@
 --												  I just generally use any icon that doesn't
 --												  look like ass. A lot look like ass.
 --
+-- * replaceStacksByProcs (bool):   When true, the stacks label displays the
+--                                  number of times the set procced instead of
+--                                  the buff stack count. The counter is
+--                                  incremented on every proc and reset when
+--                                  combat ends. The timer keeps working as
+--                                  usual. Requires stacks to be set to 0 so
+--                                  that the stacks label gets created.
+--
+-- * procs (number):        Current proc counter, only used together with
+--                          replaceStacksByProcs. Set it to 0 in the table.
+--
 -- * showFrame (bool):      Enables or disables showing the frame around
 --												  the icon. Not used for monster helm icons.
 --												  But most monster helm icons look like ass.
@@ -2006,6 +2017,23 @@ Cool.Data.Sets = {
     endTime = 0,
     cdStart = 0,
     cdEnd   = 0,
+  },
+  ["Corpseburster"] = {
+    procType = "set",
+    event = EVENT_COMBAT_EVENT,
+    description = "While in combat, tracks the number of corpseburster explosions.",
+    id = 227083,
+    enabled = false,
+    result = ACTION_RESULT_EFFECT_GAINED,
+    cooldownDurationMs = 0,
+    onCooldown = false,
+    timeOfProc = 0,
+    texture = "/esoui/art/icons/death_recap_magic_aoe.dds",
+    showFrame = true,
+    durationms = 500,
+    stacks = 0,
+    replaceStacksByProcs = true,
+    procs = 0,
   },
 ["Soulcleaver"] = {
     procType = "set",
