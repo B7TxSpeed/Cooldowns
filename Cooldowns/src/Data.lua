@@ -14,7 +14,7 @@
 --
 -- If you'd like to submit a pull request on GitHub, I'd happily take a look.
 --
---      https://github.com/inimicus/cooldowns
+--      https://github.com/B7TxSpeed/Cooldowns
 --
 -- Here is some information that might be helpful:
 --

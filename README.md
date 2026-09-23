@@ -6,6 +6,9 @@ Available on ESOUI/Minion as [Cooldowns Global](https://www.esoui.com/downloads/
 
 ## Changelog
 
+2.5.2:
+- Soulcleaver tracker.
+
 2.5.1:
 - Fix Bahsei bonus and Ansuul timer after U50.
 
