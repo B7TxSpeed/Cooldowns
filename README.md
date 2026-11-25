@@ -6,11 +6,18 @@ Available on ESOUI/Minion as [Cooldowns Global](https://www.esoui.com/downloads/
 
 ## Changelog
 
+2.5.3:
+- Nothing Wasted class mastery tracker
+- Huntsman's Warmask icon updated
+- Corpseburster tracker
+- Erudite's Rigor class mastery tracker by Waillyam
+- Icon border disabled on passive icons
+
 2.5.2:
-- Soulcleaver tracker.
+- Soulcleaver tracker by Waillyam
 
 2.5.1:
-- Fix Bahsei bonus and Ansuul timer after U50.
+- Fix Bahsei bonus and Ansuul timer after U50
 
 2.5:
 - Kazpian and Gorethief trackers by Zorax

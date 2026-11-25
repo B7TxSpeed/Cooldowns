@@ -9,7 +9,7 @@
 -- -----------------------------------------------------------------------------
 Cool                  = {}
 Cool.name             = "Cooldowns"
-Cool.version          = "2.5.2"
+Cool.version          = "2.5.3"
 Cool.dbVersion        = 1
 Cool.slash            = "/cool"
 Cool.prefix           = "[Cooldowns] "
