@@ -157,6 +157,10 @@ local function OnEffectChanged(setKey, _, change, _, effectName, unitTag, beginT
     set.timeOfProc = time()
 
     if set.durationms > 0 then
+      -- Set endTime to currentTime + durationms if endTime is not provided by the event.
+      if (endTime or 0) == 0 then
+        endTime = (time() + set.durationms) / 1000
+      end
       set.endTime = endTime
       -- if not c.isUpdating then
         -- c.isUpdating = true
