@@ -24,18 +24,6 @@ Cool.isDead           = false
 Cool.playerID         = 0
 Cool.hasJorvuld	      = false
 Cool.resTrackerOn     = false
-Cool.resourceSets     = {
-  ["Pearls of Ehlnofey"] = {
-    description = "Customize how the display behaves in regards to your resources",
-  },
-  ["Esoteric Environment Greaves"] = {
-    description = "Customize how the display behaves in regards to your resources",
-  }
-}
-Cool.resSets          = {
-	[1] = "Pearls of Ehlnofey",
-  [2] = "Esoteric Environment Greaves"
-}
 Cool.JorvuldIds       = {
 		-- Sets
 		[93120]  = true, -- Master Architecht
